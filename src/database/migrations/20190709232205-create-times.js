@@ -25,7 +25,7 @@ module.exports = {
       },
       facebook_id: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       url_escudo_svg: {
         type: Sequelize.STRING,
