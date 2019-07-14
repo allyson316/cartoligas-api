@@ -4,6 +4,7 @@ const TimeController = require('./app/controllers/TimeController');
 const TimeCartolaController = require('./app/controllers/TimeCartolaController');
 const LigaController = require('./app/controllers/LigaController');
 const RodadaController = require('./app/controllers/RodadaController');
+const RodadaTimeController = require('./app/controllers/RodadaTimeController');
 
 const routes = new Router();
 
@@ -15,6 +16,10 @@ routes.post('/ligas', LigaController.store);
 
 // Rodadas
 routes.post('/rodadas', RodadaController.store);
+
+// RodadaTime
+routes.post('/rodadasTimes', RodadaTimeController.store);
+routes.get('/rodadasTimes', RodadaTimeController.index);
 
 // routes.get('/times', TimeController.index);
 routes.post('/times', TimeController.store);

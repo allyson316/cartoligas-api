@@ -4,8 +4,9 @@ const databaseConfig = require('../config/database');
 const Time = require('../app/models/Time');
 const Liga = require('../app/models/Liga');
 const Rodada = require('../app/models/Rodada');
+const RodadaTime = require('../app/models/RodadaTime');
 
-const models = [Time, Liga, Rodada];
+const models = [Time, Liga, Rodada, RodadaTime];
 
 class Database {
   constructor() {

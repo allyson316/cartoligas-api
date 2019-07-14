@@ -1,9 +1,18 @@
+const Yup = require('yup');
 const Rodada = require('../models/Rodada');
 const Liga = require('../models/Liga');
 const CartolaFc = require('../../lib/CartolaFC');
 
 class RodadaController {
   async store(req, res) {
+    const schema = Yup.object().shape({
+      ligaId: Yup.number().required(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Dados inválidos!' });
+    }
+
     const { ligaId } = req.body;
 
     const checkIsLiga = await Liga.findOne({ where: { id: ligaId } });

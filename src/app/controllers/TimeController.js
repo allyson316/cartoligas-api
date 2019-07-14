@@ -27,11 +27,12 @@ class TimeController {
     }
 
     // cadastro o time na base
-    const { nome, nome_cartola, url_escudo_svg } = await Time.create({
+    const { id, nome, nome_cartola, url_escudo_svg } = await Time.create({
       id_time_cartola: req.body.time_id,
       ...req.body,
     });
     return res.json({
+      id,
       nome,
       nome_cartola,
       url_escudo_svg,
