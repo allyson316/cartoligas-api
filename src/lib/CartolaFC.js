@@ -11,8 +11,18 @@ class CartolaFC {
   async buscarTime(nomeTime) {
     try {
       const url = `/times?q=${nomeTime}`;
-      const timeResult = await this.request.get(url);
-      return timeResult;
+      const time = await this.request.get(url);
+      return time;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async buscarRodadas() {
+    try {
+      const url = `/rodadas`;
+      const rodadas = await this.request.get(url);
+      return rodadas;
     } catch (error) {
       return error;
     }
