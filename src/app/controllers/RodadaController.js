@@ -4,6 +4,16 @@ const Liga = require('../models/Liga');
 const CartolaFc = require('../../lib/CartolaFC');
 
 class RodadaController {
+  async index(req, res) {
+    // const { userId } = req.UserId;
+
+    const rodadas = await Rodada.findAll({
+      where: { id_liga: 6 },
+      order: ['id_rodada_cartola'],
+    });
+    return res.json(rodadas);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       ligaId: Yup.number().required(),

@@ -13,9 +13,11 @@ routes.get('/timesCartola', TimeCartolaController.index);
 
 // Ligas
 routes.post('/ligas', LigaController.store);
+routes.get('/ligas', LigaController.index);
 
 // Rodadas
 routes.post('/rodadas', RodadaController.store);
+routes.get('/rodadas', RodadaController.index);
 
 // RodadaTime
 routes.post('/rodadasTimes', RodadaTimeController.store);
