@@ -2,6 +2,14 @@ const Yup = require('yup');
 const Time = require('../models/Time');
 
 class TimeController {
+  async index(req, res) {
+    const rodadas = await Time.findAll({
+      attributes: ['id', 'nome', 'nome_cartola', 'url_escudo_svg'],
+      order: ['nome'],
+    });
+    return res.json(rodadas);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       time_id: Yup.number().required(),

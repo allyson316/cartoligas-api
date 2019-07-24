@@ -23,7 +23,7 @@ routes.get('/rodadas', RodadaController.index);
 routes.post('/rodadasTimes', RodadaTimeController.store);
 routes.get('/rodadasTimes', RodadaTimeController.index);
 
-// routes.get('/times', TimeController.index);
+routes.get('/times', TimeController.index);
 routes.post('/times', TimeController.store);
 
 module.exports = routes;

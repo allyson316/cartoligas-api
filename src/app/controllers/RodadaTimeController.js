@@ -52,12 +52,13 @@ class RodadaTimeController {
     const { rodadaId } = req.query;
     const times = await RodadaTime.findAll({
       where: { id_rodada: rodadaId },
-      attributes: ['pago'],
+      attributes: ['id', 'pago'],
       include: [
         {
           model: Time,
           as: 'time',
           attributes: ['nome', 'nome_cartola', 'url_escudo_svg'],
+          order: ['nome'],
         },
       ],
     });
