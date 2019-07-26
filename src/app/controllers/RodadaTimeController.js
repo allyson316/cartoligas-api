@@ -57,7 +57,12 @@ class RodadaTimeController {
         {
           model: Time,
           as: 'time',
-          attributes: ['nome', 'nome_cartola', 'url_escudo_svg'],
+          attributes: [
+            'id_time_cartola',
+            'nome',
+            'nome_cartola',
+            'url_escudo_svg',
+          ],
           order: ['nome'],
         },
       ],

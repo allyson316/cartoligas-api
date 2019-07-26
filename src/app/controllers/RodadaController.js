@@ -9,6 +9,7 @@ class RodadaController {
 
     const rodadas = await Rodada.findAll({
       where: { id_liga: 6 },
+      attributes: ['id', 'id_rodada_cartola', 'inicio'],
       order: ['id_rodada_cartola'],
     });
     return res.json(rodadas);
